@@ -1,70 +1,37 @@
-# Vendor-Performance-Analysis
-Simulated a real-world retail use case to analyze vendor performance, inventory turnover, and purchasing efficiency using Power BI, SQL, and Python.
 # Vendor Performance Analysis
 
-Analyze vendor contribution, profitability, and inventory risk using a curated retail dataset.  
-Built with **Power BI** for the dashboard and **Python / Jupyter** for exploratory analysis and vendor-level summaries.
+This project analyzes vendor performance, inventory turnover, and purchasing strategies using **Python**, **SQL**, and **Power BI**. It simulates a real-world retail scenario to identify underperforming vendors, optimize pricing strategies, and improve procurement efficiency.
 
 ---
 
-## Project Goals
-This project explores how vendor mix, pricing, and purchasing behavior affect sales, profit, and working capital tied up in inventory. Specifically:
+##  Objectives
 
-- Identify **top vendors** driving most purchases and sales.
-- Surface **low-performing vendors** with weak contribution.
-- Flag **target brands**: high profit margin but low sales volume (opportunity for promotion/price adjustment).
-- Quantify **unsold capital** tied up in slow-moving inventory.
-- Compare profit behavior across vendor tiers (top vs low-performing).
-
-All insights come from the supplied dataset (`vendor_sales_summary.csv`) and are visualized in Power BI.
+- Identify vendors with **low sales and high inventory holding**.
+- Analyze the contribution of **top vendors** to total purchases and sales.
+- Evaluate the impact of **bulk purchasing** on unit costs.
+- Examine **profit margins** of top-performing vs. low-performing vendors.
+- Provide actionable recommendations to reduce unsold inventory.
 
 ---
 
-## Key Metrics Shown in the Dashboard
-- **Total Sales ($)**
-- **Total Purchase ($)**
-- **Gross Profit ($)**
-- **Profit Margin (%)**
-- **Unsold Capital ($)**
-- **Purchase Contribution %** (Top 10 vs others)
-- **Top Vendors by Sales**
-- **Top Brands by Sales**
-- **Low-Performing Vendors** (relative contribution / score)
-- **Target Brands: High Profit, Low Sales** (scatter)
+##  Key Insights
 
-> See the dashboard: open `vendor_performance.pbix` in Power BI Desktop.
+- **$2.71M in unsold inventory** due to low-turnover vendors.
+- **Top 10 vendors** contribute **65.7% of total purchases**, indicating supplier dependency.
+- **Bulk purchasing** reduces unit cost by ~72%.
+- **Low-performing vendors** have higher margins but weaker sales volumes.
+- **441.41M in sales**, **134.07M gross profit**, and **38.7% average profit margin** (as per dashboard metrics).
+
+>  **[View Full PDF Report](./Vendor%20Performance%20Report.pdf)**
 
 ---
 
-## Data & Preparation
-**Source:** Simulated / project dataset: `vendor_sales_summary.csv`.
+##  Project Files
 
-**Cleaning & Filtering Steps (as used in analysis & report):**
-- Reviewed negative / zero **gross profit** and **profit margin** values.
-- Noted products with **zero sales** (potential inventory risk).
-- Examined extreme values in **freight cost**, **purchase price**, and **stock turnover**.
-- Created filtered views to focus on profitable, selling products where relevant to questions.
-- Aggregated data to vendor and brand levels for visualization.
-
-(Full exploratory work is in the notebook.)
-
----
-
-## Files in This Repository
-
-| File | What It Does |
-|------|--------------|
-| `Vendor Performance Analysis.ipynb` | Exploratory data analysis, cleaning notes, metric calculations used to support the dashboard/report. |
-| `get_vendor_summary.py` | Small utility script to generate vendor-level summary metrics from the CSV. |
-| `ingestion_db.py` | Script used during development to load / prepare data (kept for transparency; not required to view dashboard). |
-| `vendor_sales_summary.csv` | Project dataset used in analysis and dashboard. |
-| `vendor_performance.pbix` | Power BI dashboard (open in Power BI Desktop). |
-| `Vendor Performance Report.pdf` | Short business-style report summarizing insights and recommendations. |
-| `README.md` | You’re here. |
-
----
-
-## How to View
-
-- Open `vendor_performance.pbix` in Power BI Desktop to explore the dashboard.
-- For deeper context, explore the Jupyter notebook and scripts used to generate summary metrics and insights.
+```bash
+├── Vendor Performance Analysis.ipynb    # Jupyter Notebook for analysis
+├── ingestion_db.py                      # Script to load data into SQLite
+├── vendor_sales_summary.csv             # Sample dataset
+├── vendor_performance.pbix              # Power BI dashboard
+├── Vendor Performance Report.pdf        # Final report with insights
+└── README.md
